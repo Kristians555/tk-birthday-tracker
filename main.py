@@ -1,11 +1,11 @@
-from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton
+from PySide6.QtWidgets import *
 from PySide6.QtCore import QSize
 
 class BirthdayTracker(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("BDay tracker")
+        self.setWindowTitle("smth")
         self.setMinimumSize(QSize(300,200))
         
         display_tab = QWidget()
@@ -15,11 +15,21 @@ class BirthdayTracker(QMainWindow):
         tab_control.addTab(display_tab, "Display")
         tab_control.addTab(insert_tab, "Insert")
 
+        insert_layout = QVBoxLayout()
+        
+        calendar = QCalendarWidget()
+        self.calendar.selectionChanged.connect(self.date_changed)
+        insert_layout.addWidget(self.calendar)
+
+        insert_tab.setLayout(insert_layout)
+
         self.setCentralWidget(tab_control)
         
+    def date_changed(self):
+        salected_date = self.calendar.salectedDate()
+        print("Date selected:", selected_date.toString())
 
-    def pushed_button(self):
-        print("button clicked")
+    
 
 app = QApplication()
 
