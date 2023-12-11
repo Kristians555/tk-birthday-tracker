@@ -51,5 +51,46 @@
 
 # print(saskaitiKvadratsaknes(1, -1))
 
+# print("nakamais")
+
+
+# try:
+#     sk7 = int(input("ievadi simbolu rindu: "))
+#     print("skaitlis ir:", sk7)
+# except Exception as e5:
+#     print("nav ievadits vesels skaitlis")
+
+# print("nakamais")
+
+# skaitli = [1, 2, 3, 4, 5]
+
+# try:
+#     print(skaitli[5])
+# except IndexError as e6:
+#     print(e6)
+# finally:
+#     print("sis joprojam notiek")
+
+# print("nakamais")
+
+# x= int(input("ievadi pozitivu skaitli: "))
+
+# try:
+#     x= x-10
+#     assert x>=0, "atlauti tikai pozitivi skaitli"
+# except AssertionError as e7:
+#     print("notikusi kluda:", str(e7))
+
+# print("notiek")
+
 print("nakamais")
 
+def Dalisana(sk8, sk9):
+    try:
+        rezultats= sk8/sk9
+    except ZeroDivisionError as e8:
+        print(e8)
+    else:
+        return rezultats
+    
+print(Dalisana(1,1))
